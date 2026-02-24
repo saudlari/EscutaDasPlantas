@@ -35,23 +35,23 @@ const Gallery = () => {
     const pattern = index % 8;
     switch (pattern) {
       case 0:
-        return 'md:col-span-3 md:row-span-2 aspect-[3/4]';
+        return 'aspect-[4/5] md:col-span-3 md:row-span-2 md:aspect-[3/4]';
       case 1:
-        return 'md:col-span-2 aspect-square';
+        return 'aspect-square md:col-span-2';
       case 2:
-        return 'md:col-span-2 aspect-square';
+        return 'aspect-square md:col-span-2';
       case 3:
-        return 'md:col-span-3 md:row-span-1 aspect-[3/1]';
+        return 'aspect-[4/3] md:col-span-3 md:row-span-1 md:aspect-[3/1]';
       case 4:
-        return 'md:col-span-2 aspect-square';
+        return 'aspect-square md:col-span-2';
       case 5:
-        return 'md:col-span-2 aspect-square';
+        return 'aspect-square md:col-span-2';
       case 6:
-        return 'md:col-span-3 md:row-span-2 aspect-[3/4]';
+        return 'aspect-[4/5] md:col-span-3 md:row-span-2 md:aspect-[3/4]';
       case 7:
-        return 'md:col-span-2 aspect-square';
+        return 'aspect-square md:col-span-2';
       default:
-        return 'md:col-span-2 aspect-square';
+        return 'aspect-square md:col-span-2';
     }
   };
 
@@ -98,7 +98,7 @@ const Gallery = () => {
               elements.push(
                 <div
                   key={index}
-                  className={`group relative overflow-hidden cursor-pointer ${sizeClass} col-span-1`}
+                  className={`group relative overflow-hidden cursor-pointer ${sizeClass} col-span-12 md:col-span-1`}
                   style={isLargeVertical ? { gridRow: 'span 2' } : isLargeHorizontal ? { gridColumn: 'span 3' } : {}}
                 >
                   <img
