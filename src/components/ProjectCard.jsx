@@ -11,7 +11,7 @@ const ProjectCard = ({
 }) => {
   return (
     <div 
-      className={`group relative overflow-hidden rounded-xl ${aspectRatio} cursor-pointer`}
+      className={`group relative overflow-hidden ${aspectRatio} min-h-[280px] md:min-h-0 cursor-pointer`}
       onClick={onClick}
       role="button"
       tabIndex={0}

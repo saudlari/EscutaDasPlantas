@@ -41,15 +41,6 @@ const Navigation = () => {
             Bio
           </Link>
           <Link
-            to="/#works"
-            onClick={handleLinkClick}
-            className={`text-xs font-bold uppercase tracking-widest transition-colors ${
-              isActive('#works') ? 'text-primary' : 'hover:text-primary'
-            }`}
-          >
-            Performances
-          </Link>
-          <Link
             to="/gallery"
             onClick={handleLinkClick}
             className={`text-xs font-bold uppercase tracking-widest transition-colors ${
@@ -117,13 +108,6 @@ const Navigation = () => {
               }`}
             >
               Bio
-            </Link>
-            <Link
-              to="/#works"
-              onClick={handleLinkClick}
-              className="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors text-left py-2"
-            >
-              Performances
             </Link>
             <Link
               to="/gallery"

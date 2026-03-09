@@ -26,9 +26,9 @@ const Hero = () => {
       </div>
 
       <Link
-        to="/#works"
+        to="/#gallery"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
-        aria-label="Scroll to works"
+        aria-label="Ir para galeria"
       >
         <span className="material-symbols-outlined text-white/30 text-4xl">expand_more</span>
       </Link>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import PhilosophyImage from '../assets/Philosophy.webp';
+import MentoryImage1 from '../assets/Mentory1.webp';
+import MentoryImage2 from '../assets/Mentory2.webp';
 
 const Mentoria = () => {
   useEffect(() => {
@@ -68,7 +69,7 @@ const Mentoria = () => {
       
       <section className="py-32 px-6 bg-background-dark">
         <div className="max-w-[1400px] mx-auto">
-          <div className="editorial-grid mb-20">
+          <div className="grid grid-cols-12 gap-6 mb-20">
             
             <div className="col-span-12 md:col-span-7 flex flex-col justify-center px-6 md:px-12">
               <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block italic">
@@ -91,11 +92,11 @@ const Mentoria = () => {
             </div>
 
             
-            <div className="col-span-12 md:col-span-5 aspect-[3/4] group overflow-hidden rounded-xl">
+            <div className="col-span-12 md:col-span-5 aspect-[3/4] min-h-[320px] md:min-h-0 group overflow-hidden">
               <img
                 alt="Processo de Mentoria"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src={PhilosophyImage}
+                src={MentoryImage2}
               />
             </div>
           </div>
@@ -114,7 +115,7 @@ const Mentoria = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {mentorshipTypes.map((type, index) => (
-              <div key={index} className="border border-white/10 rounded-xl p-8 bg-background-dark hover:border-primary/50 transition-all">
+              <div key={index} className="border border-white/10 p-8 bg-background-dark hover:border-primary/50 transition-all">
                 <span className="text-primary font-bold text-sm uppercase tracking-widest mb-2 block">
                   {type.duration}
                 </span>
@@ -142,13 +143,13 @@ const Mentoria = () => {
       
       <section className="py-32 px-6 bg-background-dark">
         <div className="max-w-[1400px] mx-auto">
-          <div className="editorial-grid">
+          <div className="grid grid-cols-12 gap-6">
             
-            <div className="col-span-12 md:col-span-8 aspect-[4/3] group overflow-hidden rounded-xl">
+            <div className="col-span-12 md:col-span-8 aspect-[4/3] min-h-[280px] md:min-h-0 group overflow-hidden">
               <img
                 alt="Processo de Mentoria"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src={PhilosophyImage}
+                src={MentoryImage1}
               />
             </div>
 
@@ -188,7 +189,7 @@ const Mentoria = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="border border-white/10 rounded-xl p-8 bg-background-dark">
+              <div key={index} className="border border-white/10 p-8 bg-background-dark">
                 <p className="text-gray-300 italic leading-relaxed mb-6">
                   "{testimonial.quote}"
                 </p>
@@ -213,7 +214,7 @@ const Mentoria = () => {
           </p>
           <a
             href="/#contact"
-            className="inline-block bg-primary hover:bg-primary/80 text-white px-12 py-4 rounded-full text-sm font-black uppercase tracking-widest transition-all"
+            className="inline-block bg-primary hover:bg-primary/80 text-white px-12 py-4 text-sm font-black uppercase tracking-widest transition-all"
           >
             Agendar Sessão
           </a>

@@ -85,7 +85,7 @@ const Works = () => {
           Trabalhos Selecionados        </h2>
       </div>
 
-      <div className="editorial-grid">
+      <div className="grid grid-cols-12 gap-6">
         {projects.map((project) => (
           <div key={project.id} className={project.colSpan}>
             <ProjectCard

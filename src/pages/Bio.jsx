@@ -1,57 +1,63 @@
-import { useEffect, useState } from 'react';
-import PhilosophyImage from '../assets/Philosophy.webp';
-import Work1 from '../assets/Work1.webp';
-import Work2 from '../assets/Work2.webp';
-import Work3 from '../assets/Work3.webp';
+import { useEffect } from 'react';
+import BioImage from '../assets/Bio.webp';
+import BioImage2 from '../assets/Bio2.webp';
+import BioImage3 from '../assets/Bio3.webp';
+import BioGalleryExtra from '../assets/gallery/1B1A0147.webp';
 
 const Bio = () => {
-  const [images, setImages] = useState([]);
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    const imageModules = import.meta.glob('../assets/gallery/*.webp', { eager: true });
-    const imageUrls = Object.values(imageModules).map(module => module.default);
-    setImages(imageUrls.slice(0, 12));
   }, []);
 
   const timeline = [
-    {
-      year: "2024",
-      title: "Movement in Silence",
-      description: "Peça de resistência de 60 minutos explorando o corpo como condutor de vibrações ambientais. Prêmio de Melhor Performance Experimental."
-    },
-    {
-      year: "2023",
-      title: "Raízes Eterneas",
-      description: "Performance site-specific investigando redes micorrízicas e equilíbrio comunitário em espaços naturais."
-    },
-    {
-      year: "2022",
-      title: "Pulso Botânico",
-      description: "Instalação imersiva traduzindo ritmos biológicos das plantas em movimento humano através de sensores conectados."
-    },
-    {
-      year: "2020-2021",
-      title: "Residências Artísticas",
-      description: "Residências em Berlim, Santiago, Rio de Janeiro e Costa Rica, desenvolvendo pesquisa sobre comunicação planta-humano."
-    }
+    { year: "2025", title: "Nós em Nós", description: "Obra coletiva. Performer." },
+    { year: "2025", title: "Laboratório de criação de energias e estados físicos para o ator-performer a partir de símbolos", description: "Performer." },
+    { year: "2024", title: "Coral Matamba - a voz nascida do vento", description: "Performer." },
+    { year: "2024", title: "Corpa-casa-gaiola", description: "Performer." },
+    { year: "2024", title: "Rogai", description: "Performer." },
+    { year: "2024", title: "Mulheres mães que cuidam e dançam", description: "Obra coletiva contemplada com a Lei Paulo Gustavo SECULT PA." },
+    { year: "2022", title: "Laboratório voz e criação", description: "Performer." },
+    { year: "2022", title: "Ava Amazonia Festival - festival internacional indígena", description: "Performer." },
+    { year: "2022", title: "Gritos da terra", description: "Performer." },
+    { year: "2020", title: "Curandeiras", description: "Obra coletiva. Prêmio Rede Virtual de Arte e Cultura do Governo do Estado do Pará - Fundação Cultural de Artes - Dart Edital 010/2020." },
+    { year: "2019", title: "Vivência topos", description: "Performer." },
+    { year: "2018", title: "Borboleta azul", description: "Performer." },
+    { year: "2018", title: "Cosmogonia", description: "Performer." },
+    { year: "2017-2018", title: "As mandiocas - mulheres raiz", description: "Obra coletiva. Prêmio de produção artística da Fundação Cultural Seiva." },
+    { year: "2016", title: "Lugar de mulher é onde ela quiser", description: "Performer." },
+    { year: "2013", title: "Serra Pelada", description: "Performer." }
   ];
 
   const formations = [
     {
-      title: "Formação em Dança Contemporânea",
-      institution: "Universidade das Artes",
-      year: "2018"
+      title: "Mestrado profissional em dança",
+      institution: "PPGPDAN/FAV",
+      year: "2022"
     },
     {
-      title: "Especialização em Práticas Somáticas",
-      institution: "Instituto de Pesquisa Corporal",
-      year: "2019"
+      title: "Bacharelado em Nutrição",
+      institution: "Escola Superior da Amazônia (ESAMAS)",
+      year: "2016-2019"
     },
     {
-      title: "Bioacústica e Comunicação Vegetal",
-      institution: "Laboratório de Ecologia Sonora",
-      year: "2021"
+      title: "Pós-graduação em saúde pública; neurociência, aprendizagem e neuropsicologia",
+      institution: "—",
+      year: "—"
+    },
+    {
+      title: "Intérprete/criadora em dança — Produção cultural e design",
+      institution: "UFPA (eixo tecnólogo)",
+      year: "2013-2018"
+    },
+    {
+      title: "Nutricionista",
+      institution: "CRN7 10728",
+      year: "—"
+    },
+    {
+      title: "Intérprete criadora em dança",
+      institution: "Parecer CNE/CEBN 16/1999, Resolução 04/1999",
+      year: "—"
     }
   ];
 
@@ -60,13 +66,13 @@ const Bio = () => {
       
       <section className="py-32 px-6 bg-background-dark">
         <div className="max-w-[1400px] mx-auto">
-          <div className="editorial-grid mb-20">
+          <div className="grid grid-cols-12 gap-6 mb-20">
             
-            <div className="col-span-12 md:col-span-5 aspect-[3/4] group overflow-hidden rounded-xl">
+            <div className="col-span-12 md:col-span-5 aspect-[3/4] min-h-[320px] md:min-h-0 group overflow-hidden">
               <img
-                alt="Escuta das Plantas - Retrato"
+                alt="Andréa Apolinário - Retrato"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src={PhilosophyImage}
+                src={BioImage}
               />
             </div>
 
@@ -76,80 +82,52 @@ const Bio = () => {
                 // Bio
               </span>
               <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-tight mb-8">
-                Escuta das Plantas
+                Andréa Apolinário
               </h1>
               
               <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed">
                 <p>
-                  Artista de performance cuja pesquisa está na intersecção de ritmos biológicos e movimento humano. 
-                  Seu trabalho é uma busca constante por ressonância—um estado onde o corpo físico dissolve suas 
-                  fronteiras para vibrar em harmonia com o mundo natural.
+                  Andréa Apolinário, é Mestranda no mestrado profissional em dança PPGPDAN/FAV( 2022). Bacharela em nutrição pela Escola Superior da Amazônia Esamas (2016- 2019). Pós- graduada em saúde pública; neurociência- aprendizagem e neuropsicologia. É intérprete/criadora em dança no eixo tecnólogo produção cultural e design UFPA ( 2013- 2018) . Possui carreiras de  nutricionista CRN7 10728 e intérprete criadora em dança ( parecer CNE/ CEBN16/1999 resolução 04/1999) . O trajeto artístico/ acadêmico de Andréa Apolinário perpassa por um fazer de trabalhos na área da dança/ música contracoloniais, pesquisadora,bailarina, performer, carimbozeira e coralista afro-brasileira.  É  afro- amazônica,não monogâmica, ativista ambiental,umbandista, sacerdotisa do sagrado feminino, mãe de 2.
                 </p>
                 <p>
-                  Através de treinamento somático rigoroso e observação botânica, desenvolve coreografias que não são 
-                  apenas sequências de passos, mas processos metabólicos feitos visíveis. Cada performance é um ato de 
-                  ouvir—para o solo, a atmosfera, e o pulso interno da vida celular.
+                  Realizou a obra coletiva    &quot;mulheres mães que cuidam e dançam&quot; contemplada com a lei Paulo Gustavo SECULT PA (2024). Foi contemplada com a obra coletiva As mandiocas &quot; mulheres raiz&quot; prêmio de produção artística da fundação cultural seiva ( 2017- 2018) : foi beneficiada com a obra coletiva  &quot;curandeiras&quot; prêmio rede virtual de arte e cultura do governo do estado do Pará- Fundação cultural de  artes -Dart Edital 010/2020 . Foi performer na obra coletiva &quot; Nós em Nós&quot;( 2025 ) : &quot; laboratório de criação de energias e estados físicos  para o ator - performer a partir  de símbolos ( 2025)  : &quot;coral matamba - a voz nascida do vento (2024) : &quot; corpa- casa- gaiola (2024):              &quot; rogai&quot; ( 2024) :   laboratório voz e criação&quot; ( 2022): &quot;avaamazoniafestival-&quot; festival internacional indígena (2022) : gritos da terra (2022) : curandeiras ( 2020): vivência topos ( 2019): borboleta azul (2018): cosmogonia(2018): lugar de mulher é onde ela quiser( 2016): Serra Pelada  (2013).
                 </p>
               </div>
             </div>
           </div>
 
-          
-          {images.length > 0 && (
-            <div className="gallery-grid">
-              {images.slice(0, 6).map((imageUrl, index) => {
-                const getImageSize = (idx) => {
-                  const pattern = idx % 6;
-                  switch (pattern) {
-                    case 0:
-                      return 'md:col-span-3 md:row-span-2 aspect-[3/4]';
-                    case 1:
-                      return 'md:col-span-2 aspect-square';
-                    case 2:
-                      return 'md:col-span-2 aspect-square';
-                    case 3:
-                      return 'md:col-span-3 md:row-span-1 aspect-[3/1]';
-                    case 4:
-                      return 'md:col-span-2 aspect-square';
-                    case 5:
-                      return 'md:col-span-2 aspect-square';
-                    default:
-                      return 'md:col-span-2 aspect-square';
-                  }
-                };
-                const sizeClass = getImageSize(index);
-                const isLargeVertical = sizeClass.includes('row-span-2');
-                const isLargeHorizontal = sizeClass.includes('aspect-[3/1]');
-                
-                return (
-                  <div
-                    key={index}
-                    className={`group relative overflow-hidden cursor-pointer ${sizeClass} col-span-1`}
-                    style={isLargeVertical ? { gridRow: 'span 2' } : isLargeHorizontal ? { gridColumn: 'span 3' } : {}}
-                  >
-                    <img
-                      src={imageUrl}
-                      alt={`Imagem ${index + 1} da bio`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
-                  </div>
-                );
-              })}
+          {/* Galería de imágenes fijas — sin repetir fotos */}
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-4 auto-rows-[minmax(320px,auto)] md:auto-rows-[minmax(200px,auto)] mt-20">
+            <div className="col-span-12 md:col-span-4 aspect-[3/4] min-h-[280px] md:min-h-0 group overflow-hidden cursor-pointer">
+              <img
+                src={BioImage2}
+                alt="Andréa Apolinário - Galeria 1"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
             </div>
-          )}
+            <div className="col-span-12 md:col-span-4 aspect-square min-h-[280px] md:min-h-0 group overflow-hidden cursor-pointer">
+              <img
+                src={BioGalleryExtra}
+                alt="Andréa Apolinário - Galeria 3"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
+            </div>
+          </div>
         </div>
       </section>
 
       
       <section className="py-32 px-6 bg-background-light dark:bg-background-dark">
         <div className="max-w-[1400px] mx-auto">
-          <div className="editorial-grid mb-16">
-            <div className="col-span-12 md:col-span-6 aspect-[4/3] group overflow-hidden rounded-xl">
+          <div className="grid grid-cols-12 gap-6 mb-16">
+            <div className="col-span-12 md:col-span-6 aspect-[4/3] min-h-[280px] md:min-h-0 group overflow-hidden">
               <img
-                src={Work3}
-                alt="Movement in Silence"
+                src={BioImage3}
+                alt="Andréa Apolinário - Trajetória"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
@@ -161,7 +139,7 @@ const Bio = () => {
                 Trajetória Artística
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                Uma jornada através de diferentes espaços e contextos, sempre investigando a relação entre corpo e natureza.
+                Realizou a obra coletiva &quot;Mulheres mães que cuidam e dançam&quot; contemplada com a Lei Paulo Gustavo SECULT PA (2024). Foi contemplada com a obra coletiva As mandiocas &quot;mulheres raiz&quot; — prêmio de produção artística da Fundação Cultural Seiva (2017-2018). Foi beneficiada com a obra coletiva &quot;Curandeiras&quot; — prêmio Rede Virtual de Arte e Cultura do Governo do Estado do Pará, Fundação Cultural de Artes - Dart Edital 010/2020.
               </p>
             </div>
           </div>
@@ -192,7 +170,7 @@ const Bio = () => {
             Formação & Pesquisa
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {formations.map((formation, index) => (
               <div key={index} className="border border-white/10 rounded-xl p-8 bg-white/5 hover:bg-white/10 transition-all">
                 <span className="text-primary font-bold text-sm uppercase tracking-widest mb-2 block">
@@ -210,12 +188,12 @@ const Bio = () => {
       <section className="py-32 px-6 bg-background-light dark:bg-background-dark">
         <div className="max-w-4xl mx-auto text-center">
           <blockquote className="text-2xl md:text-4xl font-light italic text-gray-300 leading-relaxed">
-            "Por uma revolução concebida ao mover-se. Investigar gestos de insurgência e unguentos contra as marcas 
+            &quot;Por uma revolução concebida ao mover-se. Investigar gestos de insurgência e unguentos contra as marcas 
             de um sistema-mundo que forja corpos silenciados em seus instintos. A corpa em movimento como arma que sonha, 
-            investe modos de desestabilização do habituado, inventa novos possíveis."
+            investe modos de desestabilização do habituado, inventa novos possíveis.&quot;
           </blockquote>
           <p className="mt-8 text-primary font-bold uppercase tracking-widest text-sm">
-            — Escuta das Plantas
+            — Andréa Apolinário
           </p>
         </div>
       </section>

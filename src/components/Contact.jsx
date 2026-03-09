@@ -27,7 +27,7 @@ const Contact = () => {
 
   return (
     <section className="py-16 md:py-32 px-4 md:px-6" id="contact">
-      <div className="max-w-7xl mx-auto border border-white/10 rounded-2xl md:rounded-3xl bg-white dark:bg-background-dark/50 p-6 md:p-12 lg:p-24 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto border border-white/10 bg-white dark:bg-background-dark/50 p-6 md:p-12 lg:p-24 overflow-hidden relative">
         <div className="absolute top-0 right-0 p-4 md:p-12 opacity-5 pointer-events-none">
           <span className="material-symbols-outlined text-[150px] md:text-[300px] text-primary">contact_page</span>
         </div>
@@ -46,7 +46,7 @@ const Contact = () => {
                 href="mailto:hello@escutadasplantas.art"
                 className="flex items-center gap-3 md:gap-4 group"
               >
-                <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
+                <span className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
                   <span className="material-symbols-outlined text-lg md:text-xl">mail</span>
                 </span>
                 <span className="text-sm md:text-lg font-medium break-all">escutadasplantas@gmail.com</span>
@@ -56,7 +56,7 @@ const Contact = () => {
                 onClick={handleDownloadPressKit}
                 className="flex items-center gap-3 md:gap-4 group w-full"
               >
-                <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
+                <span className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
                   <span className="material-symbols-outlined text-lg md:text-xl">download</span>
                 </span>
                 <span className="text-sm md:text-lg font-medium uppercase tracking-widest text-left">
@@ -66,7 +66,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-background-light dark:bg-white/5 p-6 md:p-8 rounded-xl md:rounded-2xl border border-black/5 dark:border-white/5">
+          <div className="bg-background-light dark:bg-white/5 p-6 md:p-8 border border-black/5 dark:border-white/5">
             <h3 className="text-lg md:text-xl font-bold mb-6 md:mb-8 uppercase tracking-widest">Contato</h3>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
@@ -118,7 +118,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-3 md:py-4 rounded-lg font-black uppercase tracking-widest text-sm md:text-base hover:scale-[1.02] active:scale-[0.98] transition-all"
+                className="w-full bg-primary text-white py-3 md:py-4 font-black uppercase tracking-widest text-sm md:text-base hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
                 Enviar 
               </button>

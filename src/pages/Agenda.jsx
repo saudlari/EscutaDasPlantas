@@ -102,12 +102,12 @@ const Agenda = () => {
             {events.map((event) => (
               <div
                 key={event.id}
-                className="border border-white/10 rounded-xl p-8 bg-background-dark hover:border-primary/50 transition-all"
+                className="border border-white/10 p-8 bg-background-dark hover:border-primary/50 transition-all"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${eventTypes[event.type]}`}>
+                      <span className={`px-3 py-1 text-xs font-bold uppercase tracking-widest ${eventTypes[event.type]}`}>
                         {event.type}
                       </span>
                       <span className="text-primary font-black text-lg">{event.date}</span>
@@ -140,7 +140,7 @@ const Agenda = () => {
                     </div>
                     <a
                       href="/#contact"
-                      className="bg-primary hover:bg-primary/80 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap"
+                      className="bg-primary hover:bg-primary/80 text-white px-6 py-2 text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap"
                     >
                       Inscrever-se
                     </a>
@@ -182,7 +182,7 @@ const Agenda = () => {
           <div className="mt-12">
             <a
               href="/#contact"
-              className="inline-block bg-primary hover:bg-primary/80 text-white px-12 py-4 rounded-full text-sm font-black uppercase tracking-widest transition-all"
+              className="inline-block bg-primary hover:bg-primary/80 text-white px-12 py-4 text-sm font-black uppercase tracking-widest transition-all"
             >
               Entre em Contato
             </a>

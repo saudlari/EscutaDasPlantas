@@ -98,7 +98,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </h3>
                 <div className="grid grid-cols-1 gap-6">
                   {project.videos.map((video, index) => (
-                    <div key={index} className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/20">
+                    <div key={index} className="relative w-full aspect-video overflow-hidden bg-black/20">
                       {video.type === 'youtube' || video.url.includes('youtube.com') || video.url.includes('youtu.be') ? (
                         <iframe
                           src={video.url.includes('youtube.com') || video.url.includes('youtu.be') 
@@ -134,7 +134,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   {project.photos.map((photo, index) => (
                     <div
                       key={index}
-                      className="relative aspect-[4/3] rounded-lg overflow-hidden bg-black/20 group cursor-pointer"
+                      className="relative aspect-[4/3] overflow-hidden bg-black/20 group cursor-pointer"
                     >
                       <img
                         src={photo}

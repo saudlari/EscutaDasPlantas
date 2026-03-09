@@ -15,7 +15,7 @@ const Philosophy = () => {
         <div className="flex flex-col md:flex-row gap-20 items-center">
           <div className="w-full md:w-1/2 relative">
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
-            <div className="relative z-10 rounded-2xl overflow-hidden aspect-[3/4] border border-white/10">
+            <div className="relative z-10 overflow-hidden aspect-[3/4] min-h-[320px] md:min-h-0 border border-white/10">
               <img
                 alt="Professional Dancer Portrait"
                 className="w-full h-full object-cover"

@@ -81,7 +81,7 @@ const Videos = () => {
     <div className="pt-20 min-h-screen">
       <section className="py-32 px-6 bg-background-dark">
         <div className="max-w-[1400px] mx-auto">
-          <div className="editorial-grid mb-20">
+          <div className="grid grid-cols-12 gap-6 mb-20">
             <div className="col-span-12 md:col-span-7 flex flex-col justify-center px-6 md:px-12">
               <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block italic">
                 // Vídeos
@@ -96,7 +96,7 @@ const Videos = () => {
               </p>
             </div>
             
-            <div className="col-span-12 md:col-span-5 aspect-video bg-black/20 rounded-xl flex items-center justify-center">
+            <div className="col-span-12 md:col-span-5 aspect-video bg-black/20 flex items-center justify-center">
               <div className="text-center">
                 <span className="material-symbols-outlined text-6xl text-gray-600 mb-4">play_circle</span>
                 <p className="text-gray-400 text-sm">Vídeo em destaque</p>
@@ -123,7 +123,7 @@ const Videos = () => {
                       window.open(`https://www.youtube.com/watch?v=${video.youtubeId}`, '_blank');
                     }}
                   >
-                    <div className="relative aspect-video rounded-lg overflow-hidden bg-black/20 mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="relative aspect-video overflow-hidden bg-black/20 mb-4 group-hover:scale-105 transition-transform duration-300">
                       <img
                         src={video.thumbnail}
                         alt={video.title}
