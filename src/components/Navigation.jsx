@@ -77,10 +77,10 @@ const Navigation = () => {
             Agenda
           </Link>
           <Link
-            to="/#contact"
+            to="/contact"
             onClick={handleLinkClick}
             className={`text-xs font-bold uppercase tracking-widest transition-colors ${
-              isActive('#contact') ? 'text-primary' : 'hover:text-primary'
+              isRouteActive('/contact') ? 'text-primary' : 'hover:text-primary'
             }`}
           >
             Contato
@@ -153,9 +153,11 @@ const Navigation = () => {
               Filosofia
             </Link>
             <Link
-              to="/#contact"
+              to="/contact"
               onClick={handleLinkClick}
-              className="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors text-left py-2"
+              className={`text-xs font-bold uppercase tracking-widest transition-colors text-left py-2 ${
+                isRouteActive('/contact') ? 'text-primary' : 'hover:text-primary'
+              }`}
             >
               Contato
             </Link>

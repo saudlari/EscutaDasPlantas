@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { shuffleArray } from '../utils/shuffle';
 
 const EditorialSection = () => {
   const [galleryImages, setGalleryImages] = useState([]);
@@ -7,14 +8,11 @@ const EditorialSection = () => {
   useEffect(() => {
     const imageModules = import.meta.glob('../assets/gallery/*.webp', { eager: true });
     const imageUrls = Object.values(imageModules).map(module => module.default);
-    const sorted = imageUrls.sort((a, b) => (a || '').localeCompare(b || ''));
-    setGalleryImages(sorted);
+    const filtered = imageUrls.filter((url) => !String(url).includes('1B1A0147'));
+    setGalleryImages(shuffleArray(filtered));
   }, []);
 
-  // Excluir 1B1A0147 (usada en Bio) para no repetir fotos
-  const editorialImages = galleryImages
-    .filter((url) => !String(url).includes('1B1A0147'))
-    .slice(0, 9);
+  const editorialImages = galleryImages.slice(0, 9);
 
   return (
     <section className="py-20 px-6 bg-background-light dark:bg-background-dark">

@@ -7,6 +7,7 @@ import Mentoria from './pages/Mentoria';
 import Agenda from './pages/Agenda';
 import Videos from './pages/Videos';
 import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/agenda" element={<Agenda />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import GalleryGrid from './GalleryGrid';
+import { shuffleArray } from '../utils/shuffle';
 
 const Gallery = ({ maxImages = null }) => {
   const [images, setImages] = useState([]);
@@ -8,13 +9,11 @@ const Gallery = ({ maxImages = null }) => {
   useEffect(() => {
     const imageModules = import.meta.glob('../assets/gallery/*.webp', { eager: true });
     const imageUrls = Object.values(imageModules).map(module => module.default);
-    const sorted = imageUrls.sort((a, b) => (a || '').localeCompare(b || ''));
-    // Excluir 1B1A0147 (usada en Bio). En Home (maxImages) mostramos más; en sección full sin maxImages usamos solo las no usadas en EditorialSection
-    const filtered = sorted.filter((url) => !String(url).includes('1B1A0147'));
-    setImages(filtered);
+    const filtered = imageUrls.filter((url) => !String(url).includes('1B1A0147'));
+    setImages(shuffleArray(filtered));
   }, []);
 
-  const displayImages = maxImages != null ? images.slice(0, maxImages) : images.slice(9);
+  const displayImages = maxImages != null ? images.slice(0, maxImages) : images;
   const isPreview = maxImages != null;
 
   const getImageSize = (index) => {

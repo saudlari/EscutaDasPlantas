@@ -213,7 +213,7 @@ const Mentoria = () => {
             Entre em contato para agendar uma sessão inicial e descobrir como podemos trabalhar juntos.
           </p>
           <a
-            href="/#contact"
+            href="/contact"
             className="inline-block bg-primary hover:bg-primary/80 text-white px-12 py-4 text-sm font-black uppercase tracking-widest transition-all"
           >
             Agendar Sessão

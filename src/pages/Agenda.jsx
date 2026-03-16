@@ -139,7 +139,7 @@ const Agenda = () => {
                       <p className="text-xs text-gray-400 uppercase tracking-widest">Investimento</p>
                     </div>
                     <a
-                      href="/#contact"
+                      href="/contact"
                       className="bg-primary hover:bg-primary/80 text-white px-6 py-2 text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap"
                     >
                       Inscrever-se
@@ -181,7 +181,7 @@ const Agenda = () => {
 
           <div className="mt-12">
             <a
-              href="/#contact"
+              href="/contact"
               className="inline-block bg-primary hover:bg-primary/80 text-white px-12 py-4 text-sm font-black uppercase tracking-widest transition-all"
             >
               Entre em Contato

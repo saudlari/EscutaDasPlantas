@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import BioImage from '../assets/Bio.webp';
 import BioImage2 from '../assets/Bio2.webp';
 import BioImage3 from '../assets/Bio3.webp';
-import BioGalleryExtra from '../assets/gallery/1B1A0147.webp';
 
 const Bio = () => {
   useEffect(() => {
@@ -102,15 +101,6 @@ const Bio = () => {
               <img
                 src={BioImage2}
                 alt="Andréa Apolinário - Galeria 1"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
-            </div>
-            <div className="col-span-12 md:col-span-4 aspect-square min-h-[280px] md:min-h-0 group overflow-hidden cursor-pointer">
-              <img
-                src={BioGalleryExtra}
-                alt="Andréa Apolinário - Galeria 3"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
