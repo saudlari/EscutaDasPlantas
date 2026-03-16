@@ -35,7 +35,7 @@ const Bio = () => {
     },
     {
       title: "Bacharelado em Nutrição",
-      institution: "Escola Superior da Amazônia (ESAMAS)",
+      institution: "Escola Superior da Amazônia (ESAMAZ)",
       year: "2016-2019"
     },
     {
