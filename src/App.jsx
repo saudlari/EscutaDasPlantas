@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Bio from './pages/Bio';
-import Mentoria from './pages/Mentoria';
+import Practice from './pages/Practice';
 import Agenda from './pages/Agenda';
 import Videos from './pages/Videos';
 import Gallery from './pages/Gallery';
@@ -18,7 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bio" element={<Bio />} />
-          <Route path="/mentoria" element={<Mentoria />} />
+          <Route path="/practice" element={<Practice />} />
+          <Route path="/mentoria" element={<Navigate to="/practice" replace />} />
           <Route path="/agenda" element={<Agenda />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/gallery" element={<Gallery />} />

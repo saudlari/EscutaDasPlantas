@@ -59,13 +59,13 @@ const Navigation = () => {
             Vídeos
           </Link>
           <Link
-            to="/mentoria"
+            to="/practice"
             onClick={handleLinkClick}
             className={`text-xs font-bold uppercase tracking-widest transition-colors ${
-              isRouteActive('/mentoria') ? 'text-primary' : 'hover:text-primary'
+              isRouteActive('/practice') ? 'text-primary' : 'hover:text-primary'
             }`}
           >
-            Mentoria
+            Prática
           </Link>
           <Link
             to="/agenda"
@@ -128,13 +128,13 @@ const Navigation = () => {
               Vídeos
             </Link>
             <Link
-              to="/mentoria"
+              to="/practice"
               onClick={handleLinkClick}
               className={`text-xs font-bold uppercase tracking-widest transition-colors text-left py-2 ${
-                isRouteActive('/mentoria') ? 'text-primary' : 'hover:text-primary'
+                isRouteActive('/practice') ? 'text-primary' : 'hover:text-primary'
               }`}
             >
-              Mentoria
+              Prática
             </Link>
             <Link
               to="/agenda"
