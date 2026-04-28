@@ -1,50 +1,103 @@
-import { Link } from 'react-router-dom';
+import { useId, useState } from 'react';
+import PracticeProjectGallery from './PracticeProjectGallery';
+import PracticeVideoPreview from './PracticeVideoPreview';
 
-const PracticeConductor = ({ imageSrc, collectiveWorks }) => (
-  <section className="py-32 px-6 bg-background-dark">
-    <div className="max-w-[1400px] mx-auto">
-      <div className="grid grid-cols-12 gap-6 items-center">
-        <div className="col-span-12 md:col-span-8 aspect-[4/3] min-h-[280px] md:min-h-0 group overflow-hidden">
-          <img
-            alt="Escuta das Plantas — practice setting"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            src={imageSrc}
-          />
-        </div>
+const PracticeConductor = ({ collectiveProjects }) => {
+  const baseId = useId();
+  const [open, setOpen] = useState(() => ({}));
 
-        <div className="col-span-12 md:col-span-4 flex flex-col justify-center px-6 md:px-12">
-          <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block italic">
-            // Quem conduz
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6">Andréa Apolinário</h2>
-          <p className="text-lg text-gray-300 font-light leading-relaxed mb-8">
-            Este trabalho é conduzido por Andréa Apolinário. Na página Bio você encontra trajetória, formação, linha do
-            tempo e obras.
-          </p>
-          <Link
-            to="/bio"
-            className="inline-block bg-primary hover:bg-primary/80 text-white px-8 py-4 text-sm font-black uppercase tracking-widest transition-all text-center"
-          >
-            Ver bio
-          </Link>
-        </div>
-      </div>
+  const toggle = (i) => {
+    setOpen((prev) => ({ ...prev, [i]: !prev[i] }));
+  };
 
-      <div className="mt-16 md:mt-24 max-w-3xl mx-auto px-6 md:px-12 space-y-6 text-lg text-gray-300 font-light leading-relaxed">
-        <p>
-          No campo da produção cultural, realizou e integrou obras coletivas de relevância no cenário paraense, como:
+  return (
+    <section className="py-24 md:py-32 px-6 bg-background-dark border-t border-white/5">
+      <div className="max-w-5xl mx-auto">
+        <p className="text-lg text-gray-300 font-light leading-relaxed mb-10 max-w-3xl">
+          No campo da produção cultural, realizou e integrou obras coletivas de relevância no cenário paraense, entre as
+          quais:
         </p>
-        <ul className="space-y-3 list-none pl-0">
-          {collectiveWorks.map((title, idx) => (
-            <li key={idx} className="flex items-start gap-3">
-              <span className="text-primary mt-1">•</span>
-              <span>{title}</span>
-            </li>
-          ))}
+        <ul className="list-none pl-0">
+          {collectiveProjects.map((project, idx) => {
+            const isOpen = !!open[idx];
+            const panelId = `practice-proj-${baseId}-${idx}`;
+            const labelId = `practice-proj-label-${baseId}-${idx}`;
+
+            return (
+              <li
+                key={`${project.title}-${project.yearLabel}-${idx}`}
+                className="border-b border-white/10 last:border-0"
+              >
+                <h3
+                  id={labelId}
+                  className="text-xl md:text-2xl font-black uppercase tracking-tight text-white m-0 py-5"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggle(idx)}
+                    className="group flex w-full items-start justify-between gap-4 text-left rounded-lg -mx-2 px-2 py-1 -my-1 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 transition-colors"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                  >
+                    <span>
+                      {project.title}{' '}
+                      <span className="text-primary font-black normal-case">({project.yearLabel})</span>
+                    </span>
+                    <span
+                      className="material-symbols-outlined shrink-0 text-2xl text-primary transition-transform duration-200"
+                      style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                      aria-hidden
+                    >
+                      expand_more
+                    </span>
+                  </button>
+                </h3>
+
+                {isOpen && (
+                  <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={labelId}
+                    className="max-w-3xl pb-12 -mt-2"
+                  >
+                    {project.description && (
+                      <p className="text-base text-gray-300 font-light leading-relaxed mb-4 max-w-3xl">
+                        <span className="font-bold text-gray-200 not-italic">Descrição do projeto: </span>
+                        {project.description}
+                      </p>
+                    )}
+                    {project.role && (
+                      <p className="text-base text-gray-300 font-light leading-relaxed mb-4 max-w-3xl">
+                        <span className="font-bold text-gray-200 not-italic">
+                          {project.roleHeading ?? 'Minha atuação'}:{' '}
+                        </span>
+                        {project.role}
+                      </p>
+                    )}
+                    {project.videoUrl && (
+                      <PracticeVideoPreview videoUrl={project.videoUrl} title={project.title} />
+                    )}
+                    {project.gallery?.length > 0 && (
+                      <PracticeProjectGallery
+                        images={project.gallery}
+                        galleryFull={project.galleryFull}
+                        label={project.galleryLabel ?? 'Galeria'}
+                        imageAltPrefix={project.galleryAltPrefix ?? project.title}
+                        previewLayout={project.galleryPreviewLayout ?? 'columns'}
+                      />
+                    )}
+                    {!project.description && !project.role && !project.videoUrl && !project.gallery?.length && (
+                      <p className="text-sm text-gray-500 italic">Sem detalhes adicionais para este projeto.</p>
+                    )}
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default PracticeConductor;

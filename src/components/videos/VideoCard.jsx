@@ -1,13 +1,19 @@
-import { getThumbnail } from '../../utils/videoUtils';
+import { useVideoPreviewUrl } from '../../hooks/useVideoPreviewUrl';
 
 const VideoCard = ({ video, onClick }) => {
-  const thumb = getThumbnail(video);
+  const { currentSrc, onImgError } = useVideoPreviewUrl(video);
 
   return (
     <div className="group cursor-pointer" onClick={() => onClick(video)}>
       <div className="relative aspect-video overflow-hidden bg-black/20 mb-4 group-hover:scale-105 transition-transform duration-300">
-        {thumb ? (
-          <img src={thumb} alt={video.title} className="w-full h-full object-cover" />
+        {currentSrc ? (
+          <img
+            src={currentSrc}
+            alt={video.title}
+            onError={onImgError}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-black/40">
             <span className="material-symbols-outlined text-6xl text-gray-500">play_circle</span>

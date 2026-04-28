@@ -35,6 +35,7 @@ export const STATIC_VIDEO_CATEGORIES = [
           'https://res.cloudinary.com/dszfaxmrd/video/upload/so_0,w_640,h_360,c_fill,f_jpg/VID_20260206_194640_530_ay3ksl.jpg',
         duration: '03:12',
         year: '2026',
+        featured: true,
       },
       {
         id: 4,
@@ -50,4 +51,13 @@ export const STATIC_VIDEO_CATEGORIES = [
     ],
   },
 ];
+
+export const findFeaturedVideo = (categories) => {
+  if (!categories?.length) return null;
+  for (const cat of categories) {
+    const v = cat.videos?.find((x) => x.featured);
+    if (v) return v;
+  }
+  return null;
+};
 

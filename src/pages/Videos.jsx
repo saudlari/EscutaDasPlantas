@@ -1,13 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useVideoCategories } from '../hooks/useVideoCategories';
+import { findFeaturedVideo } from '../data/videoCategories';
 import VideoHeader from '../components/videos/VideoHeader';
 import VideoGrid from '../components/videos/VideoGrid';
-import YoutubeCtaSection from '../components/videos/YoutubeCtaSection';
+import InstagramCtaSection from '../components/videos/InstagramCtaSection';
 import VideoModal from '../components/videos/VideoModal';
 
 const Videos = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const { categories, loading, error } = useVideoCategories();
+  const featuredVideo = useMemo(
+    () =>
+      findFeaturedVideo(categories) ?? categories[0]?.videos[0] ?? null,
+    [categories],
+  );
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,9 +39,12 @@ const Videos = () => {
 
   return (
     <div className="pt-20 min-h-screen">
-      <VideoHeader />
+      <VideoHeader
+        featuredVideo={featuredVideo}
+        onFeaturedClick={setSelectedVideo}
+      />
       <VideoGrid categories={categories} onVideoClick={setSelectedVideo} />
-      <YoutubeCtaSection />
+      <InstagramCtaSection />
       <VideoModal video={selectedVideo} onClose={() => setSelectedVideo(null)} />
     </div>
   );
